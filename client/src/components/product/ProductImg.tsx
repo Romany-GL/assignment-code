@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import React, { ReactElement } from 'react';
-import styles from './style.module.css';
 
 type ProductImageProps = {
   imageUrl: string;
@@ -14,7 +13,6 @@ function ProductImage({ imageUrl, alt }: ProductImageProps): ReactElement {
       width={300}
       height={300}
       alt={alt ?? 'product image'}
-      className={styles.productImage}
     />
   );
 }

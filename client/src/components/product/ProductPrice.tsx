@@ -20,13 +20,28 @@ function ProductPrice({
 }: ProductPriceProps) {
   return (
     <div className={styles.priceWrapper}>
-      <data value={price}>£ {price}</data>
-      <div>
-        <button onClick={handleDecreaseQuantity} disabled={isDecreaseDisabled}>
+      <div className={styles.price}>
+        <data value={price}>£ {price}</data>
+      </div>
+
+      <small className={styles.qty}>Qty</small>
+
+      <div className={styles.actionButtons}>
+        <button
+          className={`${isDecreaseDisabled ? styles.disabled : styles.btn}`}
+          onClick={handleDecreaseQuantity}
+          disabled={isDecreaseDisabled}
+        >
           -
         </button>
-        <span title='Current quantity'>{quantity}</span>
-        <button onClick={handleIncreaseQuantity}>+</button>
+
+        <div className={styles.quantityWrapper}>
+          <span title='Current quantity'>{quantity}</span>
+        </div>
+
+        <button className={styles.btn} onClick={handleIncreaseQuantity}>
+          +
+        </button>
       </div>
     </div>
   );

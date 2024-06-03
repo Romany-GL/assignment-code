@@ -8,7 +8,7 @@ function ProductDescription({
   description,
 }: ProductDescriptionProps): ReactElement {
   return (
-    <section className='product-description'>
+    <section className='description'>
       <h3> Description</h3>
       <p> {description}</p>
     </section>
