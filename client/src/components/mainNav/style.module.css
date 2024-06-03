@@ -1,0 +1,25 @@
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  max-height: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .mainNav {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .logo {
+    align-self: center;
+    max-width: 100px;
+    max-height: 100px;
+  }
+  .basket {
+    align-self: center;
+    max-width: 20px;
+    max-height: 20px;
+  }
+}
