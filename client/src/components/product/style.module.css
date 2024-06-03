@@ -1,0 +1,32 @@
+.productWrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: auto;
+  gap: 1rem;
+}
+
+.text-muted {
+  color: var(--purpleHaze);
+}
+
+.card-header {
+  /* line-height: 0.5; */
+}
+
+.priceWrapper {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .productWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .priceWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}
