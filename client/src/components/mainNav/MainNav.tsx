@@ -17,7 +17,9 @@ function MainNav() {
         height={100}
       />
       <div>
-        <span className={styles.badge}> {getCartLength()}</span>
+        <span title='Basket items' className={styles.badge}>
+          {getCartLength()}
+        </span>
         <Image
           className={styles.basket}
           src='/basket.svg'

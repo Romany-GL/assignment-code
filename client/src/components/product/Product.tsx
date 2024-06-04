@@ -9,7 +9,7 @@ import ProductDescription from './description/ProductDescription';
 import styles from './style.module.css';
 import ProductSpecifications from './specifications/ProductSpecifications';
 import AddToCartBtn from './addToCartBtn/AddToCartBtn';
-import { CartProvider, useCart } from '@/contexts/CartContext';
+import { useCart } from '@/contexts/CartContext';
 
 type ProductProps = {
   product: Product;
