@@ -7,52 +7,77 @@ import ProductTitle from './ProductTitle';
 import ProductPrice from './ProductPrice';
 import ProductDescription from './ProductDescription';
 import styles from './style.module.css';
+import ProductSpecifications from './ProductSpecifications';
 
 type ProductProps = {
   product: Product;
 };
 
 function ProductDetails({ product }: ProductProps) {
-  const [quantity, setQuantity] = useState<number>(1);
+  const {
+    name,
+    power,
+    description,
+    price,
+    quantity,
+    brand,
+    weight,
+    height,
+    width,
+    length,
+    model_code,
+    colour,
+    img_url,
+  } = product;
+  const [totalQuantity, setTotalQuantity] = useState<number>(1);
   const minimumQuantity = 1;
-  const isDecreaseBtnDisabled = quantity === minimumQuantity;
-  const price = useMemo(
-    () => product.price * quantity,
-    [quantity, product.price]
+  const isDecreaseBtnDisabled = totalQuantity === minimumQuantity;
+
+  const totalPrice = useMemo(
+    () => price * totalQuantity,
+    [totalQuantity, price]
   );
 
   const handleIncreaseQuantity = () => {
-    setQuantity(quantity + 1);
+    setTotalQuantity(totalQuantity + 1);
   };
 
   const handleDecreaseQuantity = () => {
     if (quantity > minimumQuantity) {
-      setQuantity(quantity - 1);
+      setTotalQuantity(totalQuantity - 1);
     }
   };
 
   return (
     <div className={styles.productWrapper}>
-      <div className={styles['card-header']}>
-        <ProductImage imageUrl={product.img_url} />
+      <section>
+        <div className={styles['card-header']}>
+          <ProductImage imageUrl={img_url} />
 
-        <ProductTitle
-          title={product.name}
-          power={product.power}
-          packet={product.quantity}
+          <ProductTitle title={name} power={power} packet={quantity} />
+        </div>
+        <div>
+          <ProductPrice
+            price={totalPrice}
+            quantity={totalQuantity}
+            handleDecreaseQuantity={handleDecreaseQuantity}
+            handleIncreaseQuantity={handleIncreaseQuantity}
+            isDecreaseDisabled={isDecreaseBtnDisabled}
+          />
+        </div>
+      </section>
+      <section>
+        <ProductDescription description={description} />
+        <ProductSpecifications
+          brand={brand}
+          weight={weight}
+          height={height}
+          width={width}
+          length={length}
+          modelCode={model_code}
+          color={colour}
         />
-      </div>
-      <div>
-        <ProductPrice
-          price={price}
-          quantity={quantity}
-          handleDecreaseQuantity={handleDecreaseQuantity}
-          handleIncreaseQuantity={handleIncreaseQuantity}
-          isDecreaseDisabled={isDecreaseBtnDisabled}
-        />
-      </div>
-
-      <ProductDescription description={product.description} />
+      </section>
     </div>
   );
 }
