@@ -1,0 +1,6 @@
+.footer {
+  background-color: var(--hemocyanin);
+  padding: 0.5rem;
+  font-weight: 100;
+  font-size: small;
+}
