@@ -6,8 +6,8 @@
   min-height: 100vh;
   font-family: Gotham, helvetica, arial, sans-serif;
 }
-.title {
-  padding: 1rem;
+.title > h1 {
+  margin-bottom: 0.5rem;
 }
 .text-muted {
   color: var(--purpleHaze);
@@ -23,17 +23,18 @@
   text-align: left;
   font-weight: 200;
   color: var(--ice);
-  padding-left: 1rem;
+  padding: 0.5rem 0rem 0.5rem 1rem;
 }
 .table td {
   text-align: left;
   font-weight: 200;
   color: var(--ice);
+  padding: 0.5rem 0rem 0.5rem 1rem;
 }
 
 .table caption {
   text-align: left;
-  padding: 1rem;
+  padding: 0 0rem 0 1rem;
 }
 
 .card-header {
@@ -112,7 +113,7 @@
 .description {
   background-color: var(--hemocyanin);
 
-  padding: 1rem;
+  padding-left: 1rem;
 }
 
 .cartBtn {

@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <CartProvider>
           <MainNav />
-          <div>{children}</div>
+          {children}
           <MainFooter />
         </CartProvider>
       </body>

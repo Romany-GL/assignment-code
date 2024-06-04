@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styles from '../style.module.css';
+import { formatMoney } from '@/utils/helpers';
 
 type QuantitySelectorProps = {
   price: number;
@@ -21,7 +22,7 @@ function QuantitySelector({
   return (
     <div className={styles.priceWrapper}>
       <div className={styles.price}>
-        <data value={price}>£ {price}</data>
+        <data value={price}> {formatMoney(price)}</data>
       </div>
 
       <small className={styles.qty}>Qty</small>
