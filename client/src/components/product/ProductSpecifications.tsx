@@ -21,7 +21,7 @@ function ProductSpecifications({
 }: ProductSpecificationsProps) {
   return (
     <>
-      <table role='table' className={styles.table}>
+      <table className={styles.table}>
         <caption>
           <h3> Specifications</h3>
         </caption>
