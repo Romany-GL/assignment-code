@@ -5,6 +5,16 @@
   padding: 0.5rem 1rem 0.5rem 1rem;
   max-height: 3rem;
 }
+.badge {
+  position: absolute;
+  top: 0.1rem;
+  right: 1.1rem;
+  background-color: var(--sohoLights);
+  color: var(--siphon);
+  border-radius: 50%;
+  padding: 0.1rem 0.3rem;
+  transform: scale(0.8);
+}
 
 @media screen and (max-width: 768px) {
   .mainNav {
@@ -21,5 +31,16 @@
     align-self: center;
     max-width: 20px;
     max-height: 20px;
+  }
+
+  .badge {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.8rem;
+    background-color: var(--sohoLights);
+    color: var(--siphon);
+    border-radius: 50%;
+    padding: 0.1rem 0.3rem;
+    transform: scale(0.8);
   }
 }
