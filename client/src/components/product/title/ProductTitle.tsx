@@ -9,7 +9,7 @@ type ProductTitleProps = {
 
 function ProductTitle({ title, power, packet }: ProductTitleProps) {
   return (
-    <div className={styles['card-header']}>
+    <div className={styles.title}>
       <h1>{title}</h1>
       <small className={styles['text-muted']}>
         {power} {'//'} Packet of {packet}
