@@ -16,10 +16,10 @@
   flex-direction: column;
 }
 .card-header > img {
-  border-radius: 15px;
   align-self: self-start;
   flex-grow: 1;
-  width: 40%;
+  object-fit: fill;
+  border-radius: 15px;
 }
 .card-header > h1 {
   align-self: center;
@@ -78,7 +78,11 @@
   cursor: pointer;
   color: var(--purpleHaze);
 }
+.description {
+  background-color: var(--hemocyanin);
+}
 
+/* mobile styling */
 @media screen and (max-width: 768px) {
   .productWrapper {
     display: grid;
@@ -123,6 +127,7 @@
     align-self: center;
     justify-self: center;
     flex-grow: 1;
-    width: 100%;
+    max-width: 100%;
+    object-fit: fill;
   }
 }
