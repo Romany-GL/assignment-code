@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import styles from './style.module.css';
+import styles from '../style.module.css';
 
-type ProductPriceProps = {
+type QuantitySelectorProps = {
   price: number;
   quantity: number;
   handleIncreaseQuantity: () => void;
@@ -11,13 +11,13 @@ type ProductPriceProps = {
   isDecreaseDisabled: boolean;
 };
 
-function ProductPrice({
+function QuantitySelector({
   price,
   quantity,
   handleDecreaseQuantity,
   handleIncreaseQuantity,
   isDecreaseDisabled,
-}: ProductPriceProps) {
+}: QuantitySelectorProps) {
   return (
     <div className={styles.priceWrapper}>
       <div className={styles.price}>
@@ -47,4 +47,4 @@ function ProductPrice({
   );
 }
 
-export default ProductPrice;
+export default QuantitySelector;
