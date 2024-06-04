@@ -2,12 +2,12 @@
 
 import React, { useMemo, useState } from 'react';
 import { Product } from './types';
-import ProductImage from './ProductImg';
-import ProductTitle from './ProductTitle';
-import ProductPrice from './ProductPrice';
-import ProductDescription from './ProductDescription';
+import ProductImage from './image/ProductImg';
+import ProductTitle from './title/ProductTitle';
+import QuantitySelector from './quantitySelector/QuantitySelector';
+import ProductDescription from './description/ProductDescription';
 import styles from './style.module.css';
-import ProductSpecifications from './ProductSpecifications';
+import ProductSpecifications from './specifications/ProductSpecifications';
 
 type ProductProps = {
   product: Product;
@@ -53,18 +53,16 @@ function ProductDetails({ product }: ProductProps) {
       <section>
         <div className={styles['card-header']}>
           <ProductImage imageUrl={img_url} />
-
           <ProductTitle title={name} power={power} packet={quantity} />
         </div>
-        <div>
-          <ProductPrice
-            price={totalPrice}
-            quantity={totalQuantity}
-            handleDecreaseQuantity={handleDecreaseQuantity}
-            handleIncreaseQuantity={handleIncreaseQuantity}
-            isDecreaseDisabled={isDecreaseBtnDisabled}
-          />
-        </div>
+
+        <QuantitySelector
+          price={totalPrice}
+          quantity={totalQuantity}
+          handleDecreaseQuantity={handleDecreaseQuantity}
+          handleIncreaseQuantity={handleIncreaseQuantity}
+          isDecreaseDisabled={isDecreaseBtnDisabled}
+        />
       </section>
       <section>
         <ProductDescription description={description} />

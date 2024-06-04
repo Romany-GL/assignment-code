@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react';
-import styles from './style.module.css';
+import styles from '../style.module.css';
 type ProductDescriptionProps = {
   description: string;
 };
