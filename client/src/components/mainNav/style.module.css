@@ -36,7 +36,7 @@
   .badge {
     position: absolute;
     top: 0.2rem;
-    right: 0.8rem;
+    right: 1rem;
     background-color: var(--sohoLights);
     color: var(--siphon);
     border-radius: 50%;

@@ -64,7 +64,7 @@ function ProductDetails({ product }: ProductProps) {
   };
 
   return (
-    <div className={styles.productWrapper}>
+    <main className={styles.productWrapper}>
       <section>
         <div className={styles['card-header']}>
           <ProductImage imageUrl={img_url} />
@@ -92,7 +92,7 @@ function ProductDetails({ product }: ProductProps) {
           color={colour}
         />
       </section>
-    </div>
+    </main>
   );
 }
 
