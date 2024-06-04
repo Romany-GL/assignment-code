@@ -1,12 +1,34 @@
 .productWrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: auto;
   gap: 1rem;
+  border: 1px solid red;
 }
 
 .text-muted {
   color: var(--purpleHaze);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  font-weight: 200;
+  color: var(--ice);
+}
+.table td {
+  padding: 0.5rem;
+  text-align: left;
+  font-weight: 200;
+  color: var(--ice);
+}
+
+.table caption {
+  text-align: left;
 }
 
 .card-header {
