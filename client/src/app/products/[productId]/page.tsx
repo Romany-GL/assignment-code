@@ -1,8 +1,9 @@
 import ProductDetails from '@/components/product/Product';
 import { ModelCode, Product } from '@/components/product/types';
 import React from 'react';
-import { getClient } from '../../../ApolloClient';
+import { getClient } from '../../../lib/apolloClient';
 import { gql } from '@apollo/client';
+import { getProduct } from '@/lib/dbQuery';
 type ProductPageProps = {
   params: {
     productId: string;
@@ -47,16 +48,13 @@ const mockProduct: Product = {
   colour: 'Cool daylight',
   img_url: 'https://i.ibb.co/2nzwxnQ/bulb.png',
 };
-async function ProductPage({ params }: ProductPageProps) {
-  console.log('params.productId:::>>>', params.productId);
-  const client = getClient();
-  const { data } = await client.query({
-    query: PRODUCT_QUERY,
-    variables: { id: params.productId },
-  });
 
-  console.log('data:::>>>', data);
-  return <ProductDetails product={data.Product} />;
+async function ProductPage({ params }: ProductPageProps) {
+  const product = await getProduct(params.productId);
+  if (!product) {
+    return <div>Product not found</div>;
+  }
+  return <ProductDetails product={product} />;
 }
 
 export default ProductPage;
