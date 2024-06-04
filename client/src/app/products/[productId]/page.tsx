@@ -1,13 +1,34 @@
 import ProductDetails from '@/components/product/Product';
 import { ModelCode, Product } from '@/components/product/types';
-import { Mode } from 'fs';
 import React from 'react';
-
+import { getClient } from '../../../ApolloClient';
+import { gql } from '@apollo/client';
 type ProductPageProps = {
   params: {
     productId: string;
   };
 };
+
+const PRODUCT_QUERY = gql`
+  query Product($id: ID!) {
+    Product(id: $id) {
+      id
+      name
+      power
+      description
+      price
+      quantity
+      brand
+      weight
+      height
+      width
+      length
+      model_code
+      colour
+      img_url
+    }
+  }
+`;
 
 const mockProduct: Product = {
   id: 1,
@@ -26,9 +47,16 @@ const mockProduct: Product = {
   colour: 'Cool daylight',
   img_url: 'https://i.ibb.co/2nzwxnQ/bulb.png',
 };
+async function ProductPage({ params }: ProductPageProps) {
+  console.log('params.productId:::>>>', params.productId);
+  const client = getClient();
+  const { data } = await client.query({
+    query: PRODUCT_QUERY,
+    variables: { id: params.productId },
+  });
 
-function ProductPage({ params }: ProductPageProps) {
-  return <ProductDetails product={mockProduct} />;
+  console.log('data:::>>>', data);
+  return <ProductDetails product={data.Product} />;
 }
 
 export default ProductPage;

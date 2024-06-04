@@ -5,6 +5,7 @@ import styles from './page.module.css';
 import MainNav from '../components/mainNav/MainNav';
 import MainFooter from '@/components/mainfooter/MainFooter';
 import Head from 'next/head';
+
 import { CartProvider } from '@/contexts/CartContext';
 
 const inter = Inter({ subsets: ['latin'] });
