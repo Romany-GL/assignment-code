@@ -24,11 +24,16 @@ const PRODUCT_QUERY = gql`
 `;
 
 export async function getProduct(id: string): Promise<Product> {
-  const client = getClient();
-  const { data } = await client.query({
-    query: PRODUCT_QUERY,
-    variables: { id },
-  });
-  console.log('data:::>>>', data);
-  return data.Product;
+  try {
+    const client = getClient();
+    const { data } = await client.query({
+      query: PRODUCT_QUERY,
+      variables: { id },
+    });
+
+    return data.Product;
+  } catch (error) {
+    console.error('Error fetching product:', error);
+    throw error;
+  }
 }

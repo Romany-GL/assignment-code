@@ -4,6 +4,7 @@ import React from 'react';
 import { getClient } from '../../../lib/apolloClient';
 import { gql } from '@apollo/client';
 import { getProduct } from '@/lib/dbQuery';
+import { notFound } from 'next/navigation';
 type ProductPageProps = {
   params: {
     productId: string;
@@ -52,7 +53,7 @@ const mockProduct: Product = {
 async function ProductPage({ params }: ProductPageProps) {
   const product = await getProduct(params.productId);
   if (!product) {
-    return <div>Product not found</div>;
+    notFound();
   }
   return <ProductDetails product={product} />;
 }

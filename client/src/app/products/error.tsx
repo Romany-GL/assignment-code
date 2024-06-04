@@ -4,13 +4,13 @@ import React from 'react';
 
 type ErrorPageProps = {
   error: Error & { digest?: string };
-  reset?: () => void;
 };
 
-function ErrorPage({ error, reset }: ErrorPageProps) {
+function ErrorPage({ error }: ErrorPageProps) {
   return (
     <div>
-      <h2>{error.digest ?? 'Something went wrong!'}</h2>
+      <h2>{`Something went wrong!`}</h2>
+      <p> {`Ref: ${error.digest ?? 'unknown'}`}</p>
       <Link href='/'>Go back home</Link>
     </div>
   );
