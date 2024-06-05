@@ -11,14 +11,12 @@ type CartItem = {
 type CartContextType = {
   cart: CartItem[];
   addToCart: (item: CartItem) => void;
-  removeFromCart: (id: number) => void;
   getCartLength: () => number;
 };
 
 const CartContext = createContext<CartContextType>({
   cart: [],
   addToCart: () => {},
-  removeFromCart: () => {},
   getCartLength: () => 0,
 });
 
@@ -51,10 +49,6 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     }
   };
 
-  const removeFromCart = (id: number) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
-  };
-
   const getCartLength = (): number => {
     let length = 0;
     cart.forEach((item) => {
@@ -64,9 +58,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
   };
 
   return (
-    <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, getCartLength }}
-    >
+    <CartContext.Provider value={{ cart, addToCart, getCartLength }}>
       {children}
     </CartContext.Provider>
   );
