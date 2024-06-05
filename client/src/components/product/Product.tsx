@@ -53,7 +53,6 @@ function ProductDetails({ product }: ProductProps) {
     }
   };
   const handleAddToCart = () => {
-    console.log('Add to cart clicked');
     addToCart({
       id,
       name,
