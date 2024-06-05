@@ -77,7 +77,7 @@ function ProductDetails({ product }: ProductProps) {
           handleIncreaseQuantity={handleIncreaseQuantity}
           isDecreaseDisabled={isDecreaseBtnDisabled}
         />
-        <AddToCartBtn handleClick={handleAddToCart} />
+        <AddToCartBtn handleAddToCart={handleAddToCart} />
       </section>
       <section>
         <ProductDescription description={description} />

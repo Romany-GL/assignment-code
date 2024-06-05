@@ -2,13 +2,13 @@ import React from 'react';
 import styles from '../style.module.css';
 
 type AddToCartBtnProps = {
-  handleClick: () => void;
+  handleAddToCart: () => void;
 };
 
-function AddToCartBtn({ handleClick }: AddToCartBtnProps) {
+function AddToCartBtn({ handleAddToCart }: AddToCartBtnProps) {
   return (
     <div className={styles.row}>
-      <button className={styles.cartBtn} onClick={handleClick}>
+      <button className={styles.cartBtn} onClick={handleAddToCart}>
         Add to cart
       </button>
     </div>

@@ -4,7 +4,7 @@ import React from 'react';
 import styles from '../style.module.css';
 import { formatMoney } from '@/utils/helpers';
 
-type QuantitySelectorProps = {
+export type QuantitySelectorProps = {
   price: number;
   quantity: number;
   handleIncreaseQuantity: () => void;
